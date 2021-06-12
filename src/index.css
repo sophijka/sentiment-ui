@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+h1 {
+  font-size: 3em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav .navbar-nav .nav-link li a{
+  color: black !important;
+  }
+
+html, body, #root, #root>div {
+  height: 100%;
+  margin: 0;
+}
+
+.navbar{
+  min-height: 4rem;
+}
+
+.navbar, .navbar-end, .navbar-menu, .navbar-start {
+  align-items: stretch !important;
+  display: flex !important;
+}
+
+.navbar-menu {
+  flex-grow: 1 !important;
+  flex-shrink: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase
+}
+
+.navbar-item {
+  display: flex !important;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-link:hover {
+  background-color: #2489BF;
+}
+
+.navbar-end {
+  justify-content: flex-end !important;
+  margin-left: auto !important;
+}
+
+.features {
+  padding-bottom: 3em;
+}
+
+body {
+  visibility: visible !important;
+}
+
+.hero-body {
+  background-color: #D5DADA;  
+  padding: 3% 18%;
+  /*.hero-body {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 3rem 1.5rem;
+}*/
+}
+
+.hero.is-primary{
+  max-height: 20%;
+}
+
+.tile.is-child{
+  background-color: #838787; 
+}
+
+.auth form {
+  margin-top: 1em;
+  max-width: 50%;
+}
+
+/* .is-medium.input{
+  size: 500;
+} */
+
+/* .has-addons.field{
+  size: 500;
+} */
+
+.buttons {
+  margin-left: 1em;
+}
+
+.button.is-primary{
+  background-color: #34A5DA;
+}
+
+.button.is-primary:hover {
+  background-color: #2489BF;
+}
+
+.button.is-success{
+  background-color: #34A5DA;
+}
+
+.button.is-success:hover{
+  background-color: #2489BF;
+}
+
+/* .card-content{
+  background-color: #34A5DA;
+} */
+
+
+
+.container{
+  /* font-family: 'EB Garamond', serif; */
+  font-family: 'Sorts Mill Goudy', serif;
+  /* font-family: 'Barlow Condensed', sans-serif; */
+  font-size: 1em;
+}
+
+/* .buttons .button{
+  background-color: #34A5DA;
+} */
+
+.super-colors {
+  background: gray;
+  background: linear-gradient(0deg, rgb(238, 239, 240) 0%, rgb(238, 239, 240) 100%);
+  font-size: 0.6em;
+  /* background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);*/
 }

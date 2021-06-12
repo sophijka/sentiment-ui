@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SearchAll from './components/SearchAll';
+// import SearchCAO from './components/SearchCAO';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
   
   constructor(props) {
     super(props);
+    // this.state = {cao_list: {}}
   };
 
 
@@ -32,13 +34,17 @@ class App extends Component {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <LinkContainer to="/search">
-                <Nav.Link>Search and sentiment analysis</Nav.Link>
+                <Nav.Link>All CAOs</Nav.Link>
                 </LinkContainer>
+                {/* <LinkContainer to="/search_single">
+                <Nav.Link>Single CAO</Nav.Link>
+                </LinkContainer> */}
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
             <Switch>
               <Route exact path="/search" render={(props) => <SearchAll {...props}/>} />
+              {/* <Route exact path="/search_single" render={(props) => <SearchCAO {...props}/>} /> */}
             </Switch>
           </div>
         </Router>

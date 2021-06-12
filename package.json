@@ -2,20 +2,34 @@
   "name": "sentiment-ui",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9000",
   "dependencies": {
+    "@elastic/react-search-ui": "^1.6.0",
+    "@elastic/react-search-ui-views": "^1.6.0",
+    "@elastic/search-ui": "^1.6.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "bootstrap": "^5.0.1",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.6.1",
+    "react-csv": "^2.0.3",
+    "react-dom": "^16.14.0",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm-run-all --parallel start:app start:server",
+    "start:app": "react-scripts start",
+    "start:server": "netlify-lambda serve ./functions",
+    "build": "npm-run-all --parallel build:**",
+    "read": "read",
+    "build:app": "react-scripts build",
+    "build:functions": "netlify-lambda build ./functions"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "encoding": "^0.1.12",
+    "netlify-lambda": "^1.5.0",
+    "node-fetch": "^2.5.0",
+    "npm-run-all": "^4.1.5"
   }
 }
