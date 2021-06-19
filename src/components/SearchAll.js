@@ -103,7 +103,7 @@ export default function SearchAll() {
                       field="product_commodity"
                       label="Product"
                       filterType="any"
-                      view={SingleSelectFacet}
+                      // view={SingleSelectFacet}
                       isFilterable={true}
                     />
                     <Facet
