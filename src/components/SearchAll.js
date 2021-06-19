@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
 
 import {
   ErrorBoundary,
@@ -87,23 +86,24 @@ export default function SearchAll() {
                           name: "Relevance",
                           value: "",
                           direction: ""
-                        }//,
-                        // {
-                        //   name: "Sector",
-                        //   value: "sector",
-                        //   direction: "asc"
-                        // }
+                        },
+                        {
+                          name: "Stars",
+                          value: "stars",
+                          direction: "desc"
+                        }
                       ]}
                     />
                     )
                     }
-                    <Facet field="language" label="Language" filterType="any" />
+                    <Facet field="language" label="Language" filterType="any" 
+                    />
                     <Facet field="stars" label="stars" filterType="any" />
                     <Facet
                       field="product_commodity"
                       label="Product"
                       filterType="any"
-                      // view={SingleSelectFacet}
+                      view={SingleSelectFacet}
                       isFilterable={true}
                     />
                     <Facet
@@ -127,14 +127,7 @@ export default function SearchAll() {
                       // view={SingleSelectFacet}
                       isFilterable={true}
                     />
-                    {/* <Facet
-                      field="sector"
-                      label="Sector"
-                      filterType="any"
-                      // isFilterable={true}
-                    /> */}
-                    {/* <Facet field="period" label="Time period" filterType="any" /> */}
-                    <Facet field="sentiment" label="Sentiment" filterType="any" />
+                    <Facet field="sentiment" label="Overall sentiment" filterType="any" />
                   </div>
                 }
                 bodyContent={
@@ -145,7 +138,15 @@ export default function SearchAll() {
                 }
                 bodyHeader={
                   <React.Fragment>
-                    {wasSearched && <PagingInfo />}
+                    {wasSearched && <PagingInfo   
+  //                   view={({ start, end }) => (
+  //   <div className="paging-info">
+  //     <strong>
+  //       {start} - {end}
+  //     </strong>
+  //   </div>
+  // )}
+  />}
                     {wasSearched && <ResultsPerPage />}
                   </React.Fragment>
                 }
