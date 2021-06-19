@@ -17,8 +17,7 @@ exports.handler = function(event, context, callback) {
   console.log(host);
   const agent = host.startsWith("http:") ? httpAgent : httpsAgent;
 
-  // fetch(`35.158.98.4/amazon_reviews_test4/_search`, {
-  fetch(`${host}/amazon_reviews_test4/_search`, {
+  fetch(`${host}/amazon_reviews/_search`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: event.body,
