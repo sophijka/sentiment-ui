@@ -16,7 +16,7 @@ function buildMatch(searchTerm) {
     ? {
         multi_match: {
           query: searchTerm,
-          fields: ["text"]
+          fields: ["text", "positive_phrases"]
           // analyzer: "synonym"
         }
       }
@@ -72,7 +72,7 @@ export default function buildRequest(state) {
     //https://www.elastic.co/guide/en/elasticsearch/reference/7.x/search-request-source-filtering.html#search-request-source-filtering
     // _source: ["id", "nps_link", "title", "description", "employees_count"],
     // _source: ["id", "text", "name", "sector"],
-    _source: ["id", "text", "stars", "language", "sentiment", "stars", "review_title", "original_text"],
+    _source: ["id", "review_title", "text", "stars", "sentiment", "positivity", "negativity", "positive_phrases", "negative_phrases", "neutral_phrases", "stars", "original_text"],
     aggs: {
       language: { terms: { field: "language", size: 100 } },
       stars: { terms: { field: "stars", size: 100 } },
@@ -85,10 +85,9 @@ export default function buildRequest(state) {
         range: {
           field: "sentiment",
           ranges: [
-            { from: 0.01, to: 100.0, key: "0 - 100" },
-            { from: 0.0, to: 0.0001, key: "0 - 0.0001" },
-            { from: -100, to: -0.0001, key: "-100 - -0.0001" },
-            { from: 100.0, key: "100+" }
+            { from: 0.01, to: 100.0, key: "0.01 - 100" },
+            { from: 0.0, to: 0.0, key: "0" },
+            { from: -100, to: -0.01, key: "-100 - -0.01" }
           ]
         }
       }
