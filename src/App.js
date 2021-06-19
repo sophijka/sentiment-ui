@@ -32,7 +32,7 @@ class App extends Component {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <LinkContainer to="/search">
-                <Nav.Link>Search and sentiment analysis, powered by Expert.ai and Elastic</Nav.Link>
+                <Nav.Link>Search and sentiment analysis</Nav.Link>
                 </LinkContainer>
                 </Nav>
               </Navbar.Collapse>
@@ -40,7 +40,6 @@ class App extends Component {
             <Switch>
               <Route exact path="/search" render={(props) => <SearchAll {...props}/>} />
             </Switch>
-            
           </div>
         </Router>
       </div>
